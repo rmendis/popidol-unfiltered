@@ -24,11 +24,13 @@ class App extends unfiltered.filter.Plan {
     case GET(Path("/vote/will")) => 
       Ok ~> {
         wvotes+=1
+        logger.debug("Voted for will")
         Html(page)
       }
     case GET(Path("/vote/garath")) => 
       Ok ~> {
         gvotes+=1
+        logger.debug("Voted for garath")
         Html(page)
       }
   }
