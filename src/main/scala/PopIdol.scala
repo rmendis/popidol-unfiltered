@@ -3,12 +3,8 @@ package com.svgobjects
 import unfiltered.request._
 import unfiltered.response._
 
-import org.clapper.avsl.Logger
-
 /** unfiltered plan */
 class App extends unfiltered.filter.Plan {
-
-  val logger = Logger(classOf[App])
 
   /*
    * votes count
@@ -24,13 +20,13 @@ class App extends unfiltered.filter.Plan {
     case GET(Path("/vote/will")) => 
       Ok ~> {
         wvotes+=1
-        logger.debug("Voted for will")
+        //logger.debug("Voted for will")
         Html(page)
       }
     case GET(Path("/vote/garath")) => 
       Ok ~> {
         gvotes+=1
-        logger.debug("Voted for garath")
+        //logger.debug("Voted for garath")
         Html(page)
       }
   }
